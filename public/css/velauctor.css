@@ -1,3 +1,67 @@
-img {
-    max-width: 100%;
+body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; text-align: center; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+
+.main-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.page {
+    border: 1px #999 solid;
+    border-radius: 5px;
+    margin:8px 12px;
+    width: 100%;
+    min-height: 90vh;
+    padding: 1rem;
+    display: none;
+}
+
+.flexy {
+    display: flex;
+    justify-content: center;
+}
+.flexy button {
+    margin: 3px;
+}
+
+.active-page {
+    display: block;
+}
+
+.clock {
+    font-size: 7rem;
+    line-height: 8rem;
+}
+.greeting {
+    font-size: 1.5rem;
+}
+
+img.inline-logo {
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+}
+.userInfoDisplay {
+    border: #ddd solid 1px;
+    border-radius: 4px;
+    margin: 10px auto 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.userInfoDisplay>div {
+    width: 40%;
+    text-align: left;
+    min-width: 250px;
 }
