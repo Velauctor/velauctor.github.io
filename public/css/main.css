@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Rammetto+One|Righteous');
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.background {
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-image: linear-gradient(rgba(125,100,150,0.5) 0%,rgba(10,5,15,0.5) 100%), url('https://cdn.mos.cms.futurecdn.net/FUE7XiFApEqWZQ85wYcAfM.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.clock {
+  font-family: 'Rammetto One', Helvetica, sans-serif;
+  font-size: 2em;
+  line-height: 1.5em;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo {
+  font-family: 'Righteous', Helvetica, sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
