@@ -1,54 +1,3 @@
-// firebase.auth().signInWithRedirect(provider);
-
-// firebase.auth().getRedirectResult().then(function(result) {
-//     if (result.credential) {
-//       // This gives you a Google Access Token. You can use it to access the Google API.
-//       var token = result.credential.accessToken;
-//       // ...
-//     }
-//     // The signed-in user info.
-//     var user = result.user;
-//   }).catch(function(error) {
-//     // Handle Errors here.
-//     var errorCode = error.code;
-//     var errorMessage = error.message;
-//     // The email of the user's account used.
-//     var email = error.email;
-//     // The firebase.auth.AuthCredential type that was used.
-//     var credential = error.credential;
-//     // ...
-//   });
-
-//   var provider = new firebase.auth.GoogleAuthProvider();
-
-//   firebase.auth().signInWithRedirect(provider);
-
-//   firebase.auth().getRedirectResult().then(function(result) {
-//     if (result.credential) {
-//       // This gives you a Google Access Token. You can use it to access the Google API.
-//       var token = result.credential.accessToken;
-//       // ...
-//     }
-//     // The signed-in user info.
-//     var user = result.user;
-//   }).catch(function(error) {
-//     // Handle Errors here.
-//     var errorCode = error.code;
-//     var errorMessage = error.message;
-//     // The email of the user's account used.
-//     var email = error.email;
-//     // The firebase.auth.AuthCredential type that was used.
-//     var credential = error.credential;
-//     // ...
-//   });
-
-
-
-
-
-
-
-    
   var signInOuts = document.querySelectorAll('.dom-sign-in'),
   statuses = document.querySelectorAll('.dom-sign-in-status');
  var clockBox = document.querySelector('.clock'); 
@@ -137,6 +86,11 @@ var accessGitHub = function() {
          });
      }
  }
+ var activateHomePage = function(){
+    homePage.style.display = 'block';
+    loginPage.style.display = 'none';
+    onboardingPage.style.display = 'none';
+ }
 
 
  // [END buttoncallback]
@@ -204,12 +158,10 @@ var accessGitHub = function() {
              console.log('User account details: ' + JSON.stringify(user, null, '  '));
 
              document.getElementById('home-page-greeting').textContent = 'Hi, ' + googleDisplayName;
-             
+    
              // Turn on the proper page
              if(googleEmail === 'kbooth1000@gmail.com') {  // TEST WITH MY OWN TWO GMAIL ACCOUNTS (kbooth1000 and kjbooth1000)
-                     homePage.classList.add('active-page');
-                     loginPage.style.display = 'none';
-                     onboardingPage.style.display = 'none';
+                activateHomePage();
              } else //if(googleEmail === 'kjbooth1000@gmail.com') {
                  { onboardingPage.classList.add('active-page');
                  loginPage.style.display = 'none';
@@ -229,9 +181,13 @@ var accessGitHub = function() {
              });
          };
          // [END authstatelistener]
-         [].forEach.call(signInOuts, function(signInOut) {
+         [].forEach.call(signInOuts, function(signInOut) { // watches the signin/out button one each page
              signInOut.addEventListener('click', toggleSignIn, false);
          });
+
+         document.getElementById('skip-setup').addEventListener('click', function(){ activateHomePage() ;console.log('Activate Home Page---------------'); });//
+           
+
      });
  }
      window.onload = function() {
