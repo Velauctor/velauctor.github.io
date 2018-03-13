@@ -1,78 +1,23 @@
-//load our images from RSS Feed 
-var ourRequest = new XMLHttpRequest();
+var getImage = function getImage() {
+var imageUrl;
+var getPromise = fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A//api.flickr.com/services/feeds/photos_public.gne%3Fid%3D160069044@N05%26lang%3Den-us%26format%3Drss_200');
+getPromise
+    .then(function(gotData) {
+        return gotData.json();
+    })
+    .then(function(parsedData) {
+        return parsedData.items;
+    })
+    .then(function(itemList) {
+        var randomNum = Math.floor(Math.random() * itemList.length);
+        imageUrl = itemList[randomNum].enclosure.link;
+        var $bg = $('.background');
+        var gradientString = 'linear-gradient(rgba(125,100,150,0.5) 0%,rgba(10,5,15,0.5) 100%), '
+        $bg.css('background-image', gradientString+'url('+imageUrl+')');
+    });
+};
 
-function imageLoad() {
-    ourRequest.open('GET', 'https://api.rss2json.com/v1/api.json?rss_url=https%3A//api.flickr.com/services/feeds/photos_public.gne%3Fid%3D160069044@N05%26lang%3Den-us%26format%3Drss_200', true);
-    //what happens when the data is loaded
-    ourRequest.onload = function() {
-        var ourData = JSON.parse(ourRequest.responseText);
-        console.log(JSON.parse(ourRequest.responseText));
-        renderHTML(ourData);
-    };
-    ourRequest.onerror = function() {
-        //set background to default image
-    };
-    ourRequest.send();
-}
-imageLoad();
-
-var switcher;
-var delay = 3600;
-function delaySwitch() {
-    switcher = setInterval(renderHTML, 3600);
-}
-
-function renderHTML(data) {
-    var background = document.getElementById("background");
-    var sliderOuter = document.createElement('div');
-    sliderOuter.classList.add("slider-outer");
-    var sliderInner = document.createElement('div');
-    sliderInner.classList.add("slider-inner");
-    sliderOuter.appendChild(sliderInner);
-    background.appendChild(sliderOuter);
-    //create a list of images to be used to create a slider
-    for (var i = 0; i < data.items.length; ++i) {
-        image = data.items[i].enclosure.link;
-        spanTag = document.createElement('span');
-        itemTag = document.createElement('div');
-        itemTag.classList.add("slide-item");
-        spanTag.classList.add("slide-image");
-        spanTag.setAttribute("style", "background-image: url(" + image + ");");
-        itemTag.appendChild(spanTag);
-        sliderInner.appendChild(itemTag);
-    }
-    console.log('background: ', background);
-}
-//slider
-var slideCount = document.querySelectorAll('.slider-inner .slide-item').length;
-var slideWidth = document.querySelectorAll('.slider-outer')[0].offsetWidth;
-var slideHeight = document.querySelectorAll('.slider-outer')[0].offsetHeight;
-
-var sliderUlWidth = slideCount * slideWidth;
-document.querySelectorAll('.slider-inner')[0].style.cssText = "width:" + sliderUlWidth + "px";
-
-for (var i = 0; i < slideCount; i++) {
-    document.querySelectorAll('.slide-item')[i].style.cssText = "width:" + slideWidth + "px;height:" + slideHeight + "px";
-}
-
-setInterval(function() {
-moveRight();
-}, 36000);
-var counter = 1;
-
-function moveRight() {
-var slideNum = counter++;
-    if (slideNum < slideCount) {
-    var transformSize = slideWidth * slideNum;
-    document.querySelectorAll('.slider-inner')[0].style.cssText = 
-        "width:" + sliderUlWidth + "px; -webkit-transition:all 1000ms ease; -webkit-transform:translate3d(-" + transformSize + "px, 0px, 0px);-moz-transition:all 1000ms ease; -moz-transform:translate3d(-" + transformSize + "px, 0px, 0px);-o-transition:all 1000ms ease; -o-transform:translate3d(-" + transformSize + "px, 0px, 0px);transition:all 1000ms ease; transform:translate3d(-" + transformSize + "px, 0px, 0px)";
-    } else {
-    counter = 1;
-    document.querySelectorAll('.slider-inner')[0].style.cssText = "width:" + sliderUlWidth + "px;-webkit-transition:all 1000ms ease; -webkit-transform:translate3d(0px, 0px, 0px);-moz-transition:all 1000ms ease; -moz-transform:translate3d(0px, 0px, 0px);-o-transition:all 1000ms ease; -o-transform:translate3d(0px, 0px, 0px);transition:all 1000ms ease; transform:translate3d(0px, 0px, 0px)";
-    }
-}
-
-
+getImage();
 
 //TODO: create timer function to switch photos hourly
 //TODO: create onError item and set to default image saved to file
