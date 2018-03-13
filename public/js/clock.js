@@ -4,7 +4,7 @@ var greetList = ['Hello, ', 'Hi, ', 'Greetings, ', 'Salve, ', 'Sveiki, ', 'Guten
 var randomGreet = Math.floor(Math.random() * greetList.length);
 
 timeSlot.text(moment().format('LT'));
-greetSlot.text(greetList[randomGreet] + 'User');
+greetSlot.text(greetList[randomGreet] + googleDisplayName);
 
 setInterval(function() {
   timeSlot.text(moment().format('LT'));
