@@ -11,7 +11,7 @@
 # Main Features:
 - [ ] Clock and friendly greeting in easy-to-read font
 - [ ] User-specific To-Do list tracker
-- [ ] Background images via Flickr
+- [X] Background images via Flickr
 - [ ] Google login for easy user storage and login through other services
 - [ ] Trello API integration for board and active card tracking
 - [ ] Github API integration for recent repository event tracking
