@@ -192,12 +192,12 @@
         //  document.getElementById('skip-setup').addEventListener('click', function(){ activateHomePage() ;console.log('Activate Home Page---------------'); });//
            
 
-         document.getElementById("github-namefield").addEventListener("keyup", function(event) {
-            event.preventDefault();
-            if (event.keyCode === 13) {
-                document.getElementById("github-namefield-submit").click();
-            }
-        });
+        //  document.getElementById("github-namefield").addEventListener("keyup", function(event) {
+        //     event.preventDefault();
+        //     if (event.keyCode === 13) {
+        //         document.getElementById("github-namefield-submit").click();
+        //     }
+        // });
      });
  }
 
