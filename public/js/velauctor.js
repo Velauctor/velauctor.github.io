@@ -71,6 +71,11 @@ var accessGitHub = function() {
          });
      }
  }
+ var activateHomePage = function(){
+    homePage.style.display = 'block';
+    loginPage.style.display = 'none';
+    onboardingPage.style.display = 'none';
+ }
 
  var activateHomePage = function(){
     homePage.style.display = 'block';
@@ -165,7 +170,7 @@ var accessGitHub = function() {
              });
          };
          // [END authstatelistener]
-         [].forEach.call(signInOuts, function(signInOut) {
+         [].forEach.call(signInOuts, function(signInOut) { // watches the signin/out button one each page
              signInOut.addEventListener('click', toggleSignIn, false);
          });
          document.getElementById('skip-setup').addEventListener('click', function(){ activateHomePage() ;console.log('Activate Home Page---------------'); });//

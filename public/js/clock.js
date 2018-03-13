@@ -9,4 +9,3 @@ greetSlot.text(greetList[randomGreet] + googleDisplayName);
 setInterval(function() {
   timeSlot.text(moment().format('LT'));
 }, 5000);
-

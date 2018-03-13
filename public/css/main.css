@@ -21,6 +21,83 @@ body {
   height: 24px;
 }
 
+.signin-block {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(180,180,180,0.6);
+  z-index: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.signin-box {
+  position: fixed;
+  top: 10%;
+  left: 5%;
+  right: 5%;
+  height: 80%;
+  border: 1px #999 solid;
+  border-radius: 5px;
+  padding: 1rem;
+  background-color: #DDDDDD;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.google-signin {
+  font-family: 'Righteous', Helvetica, sans-serif;
+  font-size: 2rem;
+}
+
+.google-btn {
+  height: 180px;
+  width: 260px;
+  background-color: #EEEEEE;
+  border: 2px solid #999;
+  border-radius: 5px;
+  box-shadow: 0 2px 1px #555555;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.google-btn-img {
+  height: 60%;
+  width: 90%;
+}
+
+.logo {
+  font-family: "Righteous", Helvetica, sans-serif;
+  color: #4B85E2;
+  text-shadow: 1px 1px 1px black;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+
+.logo a {
+  text-decoration: none;
+}
+
+.logo a:visited {
+  color: #4B85E2;
+}
+
+.logo img {
+  width: 30px;
+  height: 24px;
+}
+
 .background {
   height: 100%;
   width: 100%;
@@ -45,7 +122,7 @@ body {
 .clock {
   font-family: 'Open Sans', Helvetica, sans-serif;
   font-size: 2em;
-  line-height: 1.5em;
+  line-height: 2rem;
   color: white;
   display: flex;
   flex-direction: column;
@@ -62,12 +139,15 @@ body {
   align-items: center;
 }
 
-@media (min-width: 1024) {
+@media (min-width: 1024px) {
   .clock {
     font-family: 'Open Sans', Helvetica, sans-serif;
-    font-size: 1em;
-    line-height: 1.5em;
+    font-size: 4rem;
+    line-height: 4rem;
     color: white;
+    background-color: rgba(25,25,25,0.6);
+    border-radius: 5px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
