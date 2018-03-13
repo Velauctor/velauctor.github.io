@@ -1,55 +1,4 @@
-// firebase.auth().signInWithRedirect(provider);
-
-// firebase.auth().getRedirectResult().then(function(result) {
-//     if (result.credential) {
-//       // This gives you a Google Access Token. You can use it to access the Google API.
-//       var token = result.credential.accessToken;
-//       // ...
-//     }
-//     // The signed-in user info.
-//     var user = result.user;
-//   }).catch(function(error) {
-//     // Handle Errors here.
-//     var errorCode = error.code;
-//     var errorMessage = error.message;
-//     // The email of the user's account used.
-//     var email = error.email;
-//     // The firebase.auth.AuthCredential type that was used.
-//     var credential = error.credential;
-//     // ...
-//   });
-
-//   var provider = new firebase.auth.GoogleAuthProvider();
-
-//   firebase.auth().signInWithRedirect(provider);
-
-//   firebase.auth().getRedirectResult().then(function(result) {
-//     if (result.credential) {
-//       // This gives you a Google Access Token. You can use it to access the Google API.
-//       var token = result.credential.accessToken;
-//       // ...
-//     }
-//     // The signed-in user info.
-//     var user = result.user;
-//   }).catch(function(error) {
-//     // Handle Errors here.
-//     var errorCode = error.code;
-//     var errorMessage = error.message;
-//     // The email of the user's account used.
-//     var email = error.email;
-//     // The firebase.auth.AuthCredential type that was used.
-//     var credential = error.credential;
-//     // ...
-//   });
-
-
-
-
-
-
-
-    
-  var signInOuts = document.querySelectorAll('.dom-sign-in'),
+var signInOuts = document.querySelectorAll('.dom-sign-in'),
   statuses = document.querySelectorAll('.dom-sign-in-status');
  var clockBox = document.querySelector('.clock'); 
  var loginPage = document.getElementById('login-page'),
@@ -57,24 +6,9 @@
  homePage = document.getElementById('home-page');
  var githubDisplay = document.querySelector('.githubDisplay'),
  trelloDisplay = document.querySelector('.trelloDisplay');
- function clock() {// We create a new Date object and assign it to a variable called "theTime".
-     var time = new Date(),
-         
-         // Access the "getHours" method on the Date object with the dot accessor.
-         hours = time.getHours(),
-         minutes = time.getMinutes(),
-         seconds = time.getSeconds();
+ var googleDisplayName = 'User';
 
-         clockBox.textContent = theTime(hours) + ":" + theTime(minutes) + ":" + theTime(seconds);
-     
-     function theTime(standIn) {
-         if (standIn < 10) {
-         standIn = '0' + standIn
-         }
-         return standIn;
-     }
- }
- setInterval(clock, 1000);
+ 
 
 
 // github info 
@@ -101,7 +35,7 @@ var accessGitHub = function() {
          
         // githubDisplay.textContent = githubDisplayText;
  }
- var gitHubUserID = 'kbooth1000';
+ var gitHubUserID = document.getElementById('github-namefield-submit').value;
  var request = new XMLHttpRequest();
  request.onload = accessGitHub;
  request.open('get', 'https://api.github.com/users/'+gitHubUserID+'/repos', true);
@@ -137,8 +71,17 @@ var accessGitHub = function() {
          });
      }
  }
+ var activateHomePage = function(){
+    homePage.style.display = 'block';
+    loginPage.style.display = 'none';
+    onboardingPage.style.display = 'none';
+ }
 
-
+ var activateHomePage = function(){
+    homePage.style.display = 'block';
+    loginPage.style.display = 'none';
+    onboardingPage.style.display = 'none';
+ }
  // [END buttoncallback]
  /**
   * initApp handles setting up UI event listeners and registering Firebase auth listeners:
@@ -183,7 +126,7 @@ var accessGitHub = function() {
      // [START authstatelistener]
      firebase.auth().onAuthStateChanged(function(user) {
          if (user) {         // *******************   User is signed in.
-             var googleDisplayName = user.displayName,
+             googleDisplayName = user.displayName,
              googleLogin = user.login, 
              googleEmail = user.email;
              var emailVerified = user.emailVerified;
@@ -203,13 +146,11 @@ var accessGitHub = function() {
 
              console.log('User account details: ' + JSON.stringify(user, null, '  '));
 
-             document.getElementById('home-page-greeting').textContent = 'Hi, ' + googleDisplayName;
+             document.getElementById('home-page-greeting').textContent = googleDisplayName;
              
-             // Turn on the proper page
-             if(googleEmail === 'kbooth1000@gmail.com') {  // TEST WITH MY OWN TWO GMAIL ACCOUNTS (kbooth1000 and kjbooth1000)
-                     homePage.classList.add('active-page');
-                     loginPage.style.display = 'none';
-                     onboardingPage.style.display = 'none';
+            // Turn on the proper page
+            if(googleEmail === 'kbooth1000@gmail.com') {  // TEST WITH MY OWN TWO GMAIL ACCOUNTS (kbooth1000 and kjbooth1000)
+                activateHomePage();
              } else //if(googleEmail === 'kjbooth1000@gmail.com') {
                  { onboardingPage.classList.add('active-page');
                  loginPage.style.display = 'none';
@@ -229,9 +170,17 @@ var accessGitHub = function() {
              });
          };
          // [END authstatelistener]
-         [].forEach.call(signInOuts, function(signInOut) {
+         [].forEach.call(signInOuts, function(signInOut) { // watches the signin/out button one each page
              signInOut.addEventListener('click', toggleSignIn, false);
          });
+         document.getElementById('skip-setup').addEventListener('click', function(){ activateHomePage() ;console.log('Activate Home Page---------------'); });//
+
+         document.getElementById("github-namefield").addEventListener("keyup", function(event) {
+            event.preventDefault();
+            if (event.keyCode === 13) {
+                document.getElementById("github-namefield-submit").click();
+            }
+        });
      });
  }
      window.onload = function() {
