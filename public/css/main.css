@@ -1,9 +1,24 @@
-@import url('https://fonts.googleapis.com/css?family=Rammetto+One|Righteous');
+@import url('https://fonts.googleapis.com/css?family=Righteous|Open+Sans:800');
 
 body {
   margin: 0;
   width: 100vw;
   height: 100vh;
+  color: #fff;
+}
+
+.logo {
+  font-family: "Righteous", Helvetica, sans-serif;
+  color: #4B85E2;
+  text-shadow: 1px 1px 1px black;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+
+.logo img {
+  width: 30px;
+  height: 24px;
 }
 
 .background {
@@ -28,7 +43,7 @@ body {
 }
 
 .clock {
-  font-family: 'Rammetto One', Helvetica, sans-serif;
+  font-family: 'Open Sans', Helvetica, sans-serif;
   font-size: 2em;
   line-height: 1.5em;
   color: white;
@@ -45,4 +60,18 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@media (min-width: 1024) {
+  .clock {
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-size: 1em;
+    line-height: 1.5em;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
 }
