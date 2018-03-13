@@ -5,14 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Velauctor Dashboard</title>
+  <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
   <div class="background"></div>
+  <div class="signin-block">
+    <div class="signin-box">
+      <button class="google-btn">
+        <span class="google-signin">Sign in with</span>
+        <img class="google-btn-img" src='google_logo.png'>
+      </button>
+    </div>
+  </div>
   <div class="main">
+    <div class="logo">
+      <a href='https://github.com/Velauctor/velauctor.github.io'><img src="logo.png" /><span>elauctor</span></a>
+    </div>
     <div class="clock">
-      <div class="time">19:02</div>
-      <div class="greeting">HELLO, YOU</div>
+      <div class="time">Fetching time...</div>
+      <div class="greeting">Fetching user...</div>
     </div>
     <div class="todo">
       <div class="list">TODO:</div>
@@ -20,5 +32,8 @@
     </div>
   </div>
   </main>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js'></script>
+  <script src='js/clock.js'></script>
 </body>
 </html>
