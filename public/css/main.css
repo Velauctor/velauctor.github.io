@@ -173,6 +173,15 @@ body {
   align-items: center;
 }
 
+#github-namefield {
+  border: none;
+  background-color: rgba(25,25,25,0.6);
+  font-style: italic;
+  font-size: 0.8rem;
+  color: white;
+  margin: 3px;
+}
+
 .todo {
   font-family: 'Righteous', Helvetica, sans-serif;
   color: white;
@@ -276,6 +285,12 @@ body {
   position: fixed;
   top: 5px;
   right: 5px;
+}
+
+.userInfoDisplay {
+  background-color: rgba(25,25,25,0.6);
+  border-radius: 5px;
+  padding: 5px;
 }
 
 @media (min-width: 1024px) {
