@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Righteous|Open+Sans:800');
+@import url('https://use.fontawesome.com/releases/v5.0.8/css/all.css');
 
 body {
   margin: 0;
@@ -119,7 +120,7 @@ body {
   align-items: center;
 }
 .weather {
-  font-family: Helvetica, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.5em;
   line-height: 1.5rem;
   letter-spacing: 0.1rem;
