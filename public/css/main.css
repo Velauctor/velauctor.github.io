@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Righteous|Open+Sans:800');
+@import url('https://use.fontawesome.com/releases/v5.0.8/css/all.css');
 
 body {
   margin: 0;
@@ -144,7 +145,23 @@ body {
   justify-content: space-around;
   align-items: center;
 }
-
+.weather {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.5em;
+  line-height: 1.5rem;
+  letter-spacing: 0.1rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.weather-widget {
+  list-style: none;
+}
+#city {
+  font-weight: 700;
+}
 .clock {
   font-family: 'Open Sans', Helvetica, sans-serif;
   font-size: 2em;
