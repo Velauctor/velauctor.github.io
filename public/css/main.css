@@ -31,6 +31,13 @@ body {
   z-index: 1;
 }
 
+.signin-form, .userInfoDisplay {
+  float: left;
+  position: absolute;
+  left: 2rem;
+  top: 35%;
+}
+
 .hidden {
   display: none;
 }

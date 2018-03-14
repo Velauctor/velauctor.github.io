@@ -26,6 +26,28 @@
       <div class="time">Fetching time...</div>
       <div class="greeting">Fetching user...</div>
     </div>
+
+    <div class="github-signin signin-form">
+        <form id="github-namefield-form">
+          <label name="github-namefield">Enter your Github username:</label><br><input id="github-namefield" type="text" name="github-namefield"><br>
+        <button id="github-namefield-submit" class="mdl-button mdl-js-button mdl-button--raised">Submit</button>
+        </form>
+    </div>
+
+    <div class="userInfoDisplay hidden">
+        <div><b>Github Repos:</b>
+            <div class="githubDisplay">
+          <!-- <ul>
+            <li></li>
+          </ul> --></div>
+        </div>
+        <div class="trelloDisplay"><b>Trello Cards:</b>
+            <!-- <ul>
+              <li></li>
+            </ul> -->
+          </div>
+      </div>
+
     <div class="todo">
       <div class="list">TODO:</div>
       <div class="complete">COMPLETE:</div>
@@ -42,5 +64,6 @@
   <script src='js/velauctor.js'></script>
   <script src='js/clock.js'></script>
   <script src="js/flickrapi.js"></script>
+  <script src="js/githubapi.js"></script>
 </body>
 </html>
