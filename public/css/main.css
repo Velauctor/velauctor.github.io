@@ -182,12 +182,94 @@ body {
   align-items: center;
 }
 
-.todo .list {
+.new-task-input {
+  border: none;
   background-color: rgba(25,25,25,0.6);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: white;
+  margin: 3px;
 }
 
-.todo .complete {
+.add-btn {
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-color: green;
+  position: relative;
+}
+
+.add-btn i {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  top: 0;
+  left: -4px;
+}
+
+.todo > .list {
   background-color: rgba(25,25,25,0.6);
+  width: 300px;
+  height: 100px;
+}
+
+.todo > .list > ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.todo > .list > ul > li {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+
+.todo > .complete {
+  background-color: rgba(25,25,25,0.6);
+  width: 300px;
+  height: 75px;
+}
+
+.todo > .complete > ul {
+  list-style: none;
+  color: gray;
+  text-decoration: line-through;
+  margin: 0;
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.todo > .complete > ul > li {
+  width: 100%;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+
+.done-btn {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background-color: red;
+  position: relative;
+}
+
+.done-btn i {
+  color: white;
+  font-size: 14px;
+  position: relative;
+  top: 0;
+  left: -6px;
 }
 
 .signout {
@@ -209,6 +291,22 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .add-btn {
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    background-color: green;
+    position: relative;
+  }
+  
+  .add-btn i {
+    color: white;
+    font-size: 16px;
+    position: relative;
+    top: 0;
+    left: -4px;
   }
   
 }
