@@ -1,6 +1,6 @@
 var getImage = function getImage() {
     var imageUrl;
-    var getPromise = fetch('https://api.rss2json.com/v1/api.json?rss_url=https%3A//api.flickr.com/services/feeds/photos_public.gne%3Fid%3D160069044@N05%26lang%3Den-us%26format%3Drss_200');
+    var getPromise = fetch('...');
     getPromise
       .then(function(gotData) {
         return gotData.json();

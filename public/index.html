@@ -7,6 +7,7 @@
   <title>Velauctor Dashboard</title>
   <link rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
   <div class="background"></div>
@@ -27,20 +28,33 @@
       <div class="greeting">Fetching user...</div>
     </div>
     <div class="todo">
-      <div class="list">TODO:</div>
-      <div class="complete">COMPLETE:</div>
+      <form class="task-add">
+        <input type='text' class='new-task-input' placeholder='Add a new task...' /> <button type="button" class="add-btn" name="add-btn"><i class="material-icons">note_add</i></button>
+      </form>
+      <div class="list"><span>TASKS:</span>
+        <ul>
+
+        </ul>
+      </div>
+      <div class="complete"><span>COMPLETE:</span>
+        <ul>
+
+        </ul>
+      </div>
     </div>
   </div>
   <a href=''><button class="signout">SIGN OUT</button></a>
 </div>
 
-  <script src="/__/firebase/4.0.0/firebase-app.js"></script>
-  <script src="/__/firebase/4.0.0/firebase-auth.js"></script>
+  <script src="/__/firebase/4.10.1/firebase-app.js"></script>
+  <script src="/__/firebase/4.10.1/firebase-auth.js"></script>
+  <script src="/__/firebase/4.10.1/firebase-firestore.js"></script>
   <script src="/__/firebase/init.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js'></script>
   <script src='js/velauctor.js'></script>
   <script src='js/clock.js'></script>
   <script src="js/flickrapi.js"></script>
+  <script src="js/tasktracker.js"></script>
 </body>
 </html>
