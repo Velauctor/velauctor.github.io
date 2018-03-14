@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/main2.css">
   <link rel="stylesheet" href="css/velauctor.css">
 
   <!-- Import and configure the Firebase SDK -->
@@ -57,21 +57,20 @@
 
         <!-- Button that handles sign-in/sign-out -->
         <div class="flexy">
-
-          <div>Set up<br><b>Trello</b><br>
-            <div class="trello-signin signin-form"></div>
-            <button  class="mdl-button mdl-js-button mdl-button--raised" id="trello-setup">Set up Trello</button>
+            <div class="trello-signin signin-form">
+              <div>Set up<br><b>Trello</b><br>
+                <button  class="mdl-button mdl-js-button mdl-button--raised" id="trello-setup">Set up Trello</button>
+              </div>
           </div>
-          <div>Set up <br><b>Github</b><br>
             <div class="github-signin signin-form">
-              <form>
-                <label name="github-namefield">Your Github username:</label><br><input id="github-namefield" type="text" name="github-namefield">
-              <button id="github-namefield-submit">Submit</button>
+              <form id="github-namefield-form">
+                <label name="github-namefield">Enter your Github username:</label><br><input id="github-namefield" type="text" name="github-namefield"><br>
+              <button id="github-namefield-submit" class="mdl-button mdl-js-button mdl-button--raised">Submit</button>
               </form>
             </div>
-            <button  class="mdl-button mdl-js-button mdl-button--raised" id="github-setup">Set up Github</button>
+            <!-- <button  class="mdl-button mdl-js-button mdl-button--raised" id="github-setup">Set up Github</button> -->
           </div> 
-      </div><br><br>
+      <br><br>
       <div><button  class="mdl-button mdl-js-button mdl-button--raised" id="skip-setup">Skip Setup >></button></div> 
       <div class="flexy"><div class="mdl-card__supporting-text mdl-color-text--grey-600">
     
@@ -94,7 +93,7 @@
       <!-- begin Ben's code    -->
         <div class="clock">
             <div class="time">Fetching time...</div>
-            <div class="greeting">Fetching user...</div><span id="home-page-greeting">User</span>
+            <div class="greeting">Fetching user...</div>
           </div>
           <div class="todo">
             <div class="list">TODO:</div>
@@ -133,7 +132,7 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js'></script>
 
-  <script src="js/velauctor.js"></script>
+  <script src="js/velauctor2.js"></script>
   <script src='js/clock.js'></script>
 </body>
 </html>
