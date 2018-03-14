@@ -35,33 +35,21 @@ var getImage = function getImage() {
 var accessGitHub = function(responseText) {
    var responseObj = JSON.parse(this.responseText);
   // console.log(responseObj.name + " has " + responseObj.public_repos + " public Github repositories!");
-   
-       console.log('Github LOGIN: '+ responseText);
-       // for(var obj in responseObj) {
-       //     console.log(obj+": "+responseObj[obj]);
-       // }
-       console.log('Repo Names:');
-       var githubDisplayText = '';
-       var repoList = document.createElement('ul');
-       githubDisplay.appendChild(repoList);
-       for(var i=0;i<responseObj.length;i++) {
-           console.log(i+": "+responseObj[i].name);
-           githubDisplayText += '\n * '+responseObj[i].name;
-           var repoLine = document.createElement('li');
-           repoLine.textContent = responseObj[i].name;
-           repoList.appendChild(repoLine);
-       }
+    console.log('Github LOGIN: '+ responseText);
+    var githubDisplayText = '';
+    var repoList = document.createElement('ul');
+    githubDisplay.appendChild(repoList);
+    for(var i=0;i<responseObj.length;i++) {
+        console.log(i+": "+responseObj[i].name);
+        githubDisplayText += '\n * '+responseObj[i].name;
+        var repoLine = document.createElement('li'); //create repo list on page
+        var repoAnchor = document.createElement('a');
+        repoLine.textContent = responseObj[i].name;
+        repoList.appendChild(repoLine);
+    }
     activateHomePage();       
-      // githubDisplay.textContent = githubDisplayText;
 }
-var gitHubUserID = '';//document.getElementById('github-namefield-submit').value;
-// var request = new XMLHttpRequest();
-// request.onload = accessGitHub;
-// // request.open('get', 'https://api.github.com/users/'+gitHubUserID+'/repos', true);
-// request.onerror = function(){
-//    console.log('The given gitHubUserID ('+gitHubUserID+') is not valid.');
-// }
-// request.send();
+var gitHubUserID = '';
 
 
 // Function called when clicking the Login/Logout button.
@@ -96,6 +84,11 @@ var activateHomePage = function(){
   homePage.style.display = 'block';
   loginPage.style.display = 'none';
   onboardingPage.style.display = 'none';
+},
+  activateOnboardingPage = function() {
+    onboardingPage.style.display = 'block';
+    loginPage.style.display = 'none';
+    homePage.style.display = 'none';
 }
 // [END buttoncallback]
 /**
@@ -158,19 +151,14 @@ function initApp() {
            [].forEach.call(signInOuts, function(signInOut) {
                signInOut.textContent = 'Sign out';
            });
-
-        //    console.log('User account details: ' + JSON.stringify(user, null, '  '));
-
-        //    document.getElementById('home-page-greeting').textContent = googleDisplayName;
            
-          // Turn on the proper page
-          if(googleEmail === 'kbooth1000@gmail.com') {  // TEST WITH MY OWN TWO GMAIL ACCOUNTS (kbooth1000 and kjbooth1000)
+            // Turn on the proper page
+            if(googleEmail === 'kbooth1000@gmail.com') {  // TEST WITH MY OWN GMAIL ACCOUNT (kbooth1000)
               activateHomePage();
-           } else //if(googleEmail === 'kjbooth1000@gmail.com') {
-               { onboardingPage.style.display = 'block';
-               loginPage.style.display = 'none';
-               homePage.style.display = 'none';
-           }
+            } else //if(googleEmail === 'kjbooth1000@gmail.com') {
+            { 
+                activateOnboardingPage();
+            }
        } else {        // *******************  User is signed out.
            [].forEach.call(statuses, function(status) {
                status.textContent = 'Signed out';
