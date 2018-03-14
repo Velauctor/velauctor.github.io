@@ -118,7 +118,23 @@ body {
   justify-content: space-around;
   align-items: center;
 }
-
+.weather {
+  font-family: Helvetica, sans-serif;
+  font-size: 1.5em;
+  line-height: 1.5rem;
+  letter-spacing: 0.1rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.weather-widget {
+  list-style: none;
+}
+#city {
+  font-weight: 700;
+}
 .clock {
   font-family: 'Open Sans', Helvetica, sans-serif;
   font-size: 2em;
