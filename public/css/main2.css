@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Righteous|Open+Sans:800');
-@import url('https://use.fontawesome.com/releases/v5.0.8/css/all.css');
 
 body {
   margin: 0;
@@ -30,13 +29,6 @@ body {
   width: 100%;
   background-color: rgba(180,180,180,0.6);
   z-index: 1;
-}
-
-.signin-form, .userInfoDisplay {
-  float: left;
-  position: absolute;
-  left: 2rem;
-  top: 35%;
 }
 
 .hidden {
@@ -106,29 +98,10 @@ body {
   height: 24px;
 }
 
-/* .background {
+.background {
   height: 100%;
   width: 100%;
   z-index: -1;
-  background-image: linear-gradient(rgba(125,100,150,0.5) 0%,rgba(10,5,15,0.5) 100%), url('https://cdn.mos.cms.futurecdn.net/FUE7XiFApEqWZQ85wYcAfM.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-} */
-
-.background-container {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-}
-
-.background-container .background {
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-  transition: background 0.7s linear;
-  -webkit-transition: background 0.7s linear;
   background-image: linear-gradient(rgba(125,100,150,0.5) 0%,rgba(10,5,15,0.5) 100%), url('https://cdn.mos.cms.futurecdn.net/FUE7XiFApEqWZQ85wYcAfM.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -145,23 +118,7 @@ body {
   justify-content: space-around;
   align-items: center;
 }
-.weather {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.5em;
-  line-height: 1.5rem;
-  letter-spacing: 0.1rem;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-.weather-widget {
-  list-style: none;
-}
-#city {
-  font-weight: 700;
-}
+
 .clock {
   font-family: 'Open Sans', Helvetica, sans-serif;
   font-size: 2em;
@@ -171,6 +128,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin: 2rem auto 3rem;
 }
 
 .todo {
@@ -182,100 +140,22 @@ body {
   align-items: center;
 }
 
-.new-task-input {
-  border: none;
+.todo .list {
   background-color: rgba(25,25,25,0.6);
-  font-style: italic;
-  font-size: 1.2rem;
-  color: white;
-  margin: 3px;
 }
 
-.add-btn {
-  height: 28px;
-  width: 28px;
-  border-radius: 50%;
-  background-color: green;
-  position: relative;
-}
-
-.add-btn i {
-  color: white;
-  font-size: 20px;
-  position: relative;
-  top: 0;
-  left: -4px;
-}
-
-.todo > .list {
+.todo .complete {
   background-color: rgba(25,25,25,0.6);
-  width: 300px;
-  height: 100px;
-}
-
-.todo > .list > ul {
-  list-style: none;
-  margin: 0;
-  padding-left: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-}
-
-.todo > .list > ul > li {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border-top: 1px solid gray;
-  border-bottom: 1px solid gray;
-}
-
-.todo > .complete {
-  background-color: rgba(25,25,25,0.6);
-  width: 300px;
-  height: 75px;
-}
-
-.todo > .complete > ul {
-  list-style: none;
-  color: gray;
-  text-decoration: line-through;
-  margin: 0;
-  padding-left: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-}
-
-.todo > .complete > ul > li {
-  width: 100%;
-  border-top: 1px solid gray;
-  border-bottom: 1px solid gray;
-}
-
-.done-btn {
-  height: 18px;
-  width: 18px;
-  border-radius: 50%;
-  background-color: red;
-  position: relative;
-}
-
-.done-btn i {
-  color: white;
-  font-size: 14px;
-  position: relative;
-  top: 0;
-  left: -6px;
 }
 
 .signout {
   position: fixed;
   top: 5px;
   right: 5px;
+}
+
+.signin-form {
+    margin: 4rem;
 }
 
 @media (min-width: 1024px) {
@@ -292,26 +172,5 @@ body {
     justify-content: space-between;
     align-items: center;
   }
-
-  .add-btn {
-    height: 22px;
-    width: 22px;
-    border-radius: 50%;
-    background-color: green;
-    position: relative;
-  }
   
-  .add-btn i {
-    color: white;
-    font-size: 16px;
-    position: relative;
-    top: 0;
-    left: -4px;
-  }
-  
-}
-.image-loading *,
-.image-loading *:before,
-.image-loading *:after {
-  animation-play-state: paused !important;
 }
